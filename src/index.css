@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.5s ease-out forwards;
+}
+
+/* Button hover animations */
+.btn-hover {
+  @apply transition-all duration-200 ease-out transform hover:scale-105 hover:shadow-md active:scale-95;
+}
+
+.btn-hover-slide {
+  @apply transition-all duration-200 ease-out transform hover:translate-x-1 rtl:hover:-translate-x-1;
+}
+
+.btn-hover-glow {
+  @apply transition-all duration-200 ease-out hover:shadow-lg hover:brightness-110;
+}
+
+.btn-hover-bounce {
+  @apply transition-all duration-200 ease-out transform active:scale-95 hover:-translate-y-1;
+}
+
+.btn-hover-dark {
+  @apply transition-all duration-200 ease-out relative;
+}
+
+.btn-hover-dark::after {
+  content: '';
+  @apply absolute inset-0 bg-black opacity-0 transition-opacity duration-200 rounded-md;
+}
+
+.btn-hover-dark:hover::after {
+  @apply opacity-10;
+}
+
+/* Custom styles */
+.bg-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.bg-gradient-purple-light {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+.form-input-purple {
+  @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm;
+}
+
+.btn-purple {
+  @apply inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors duration-200;
+}
+
+.btn-purple-outline {
+  @apply inline-flex justify-center py-2 px-4 border border-purple-300 rounded-md shadow-sm text-sm font-medium text-purple-700 bg-white hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors duration-200;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg;
+}
+
+/* Calendar Styles */
+.rbc-calendar {
+  @apply font-sans;
+}
+
+.rbc-toolbar {
+  @apply mb-4;
+}
+
+.rbc-toolbar button {
+  @apply px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+}
+
+.rbc-toolbar button.rbc-active {
+  @apply bg-primary-600 text-white;
+}
+
+.rbc-toolbar button:hover {
+  @apply bg-primary-100;
+}
+
+.rbc-toolbar button.rbc-active:hover {
+  @apply bg-primary-700;
+}
+
+.rbc-month-view {
+  @apply rounded-lg border-gray-200;
+}
+
+.rbc-header {
+  @apply py-2 font-medium text-gray-700 bg-gray-50 border-gray-200;
+}
+
+.rbc-date-cell {
+  @apply p-1 text-right text-sm text-gray-700;
+}
+
+.rbc-today {
+  @apply bg-primary-50;
+}
+
+.rbc-event {
+  @apply rounded-md shadow-sm transition-all duration-200 cursor-pointer;
+}
+
+.rbc-event:hover {
+  @apply transform scale-105;
+}
+
+.rbc-event-content {
+  @apply text-sm font-medium;
+}
+
+.rbc-show-more {
+  @apply text-primary-600 hover:text-primary-700 font-medium;
+}
+
+.rbc-off-range-bg {
+  @apply bg-gray-50;
+}
+
+.rbc-current-time-indicator {
+  @apply bg-primary-500;
+}
+
+/* DatePicker Styles */
+.react-datepicker-wrapper {
+  @apply w-full;
+}
+
+.react-datepicker {
+  @apply font-sans border-gray-200 rounded-lg shadow-lg;
+}
+
+.react-datepicker__header {
+  @apply bg-primary-50 border-gray-200;
+}
+
+.react-datepicker__current-month {
+  @apply text-gray-900 font-medium;
+}
+
+.react-datepicker__day-name {
+  @apply text-gray-500;
+}
+
+.react-datepicker__day {
+  @apply text-gray-700 hover:bg-primary-100 rounded-full transition-colors duration-200;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-primary-600 text-white hover:bg-primary-700;
+}
+
+.react-datepicker__day--today {
+  @apply font-medium text-primary-600;
+}
+
+.react-datepicker__input-container input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+}
